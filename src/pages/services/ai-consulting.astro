@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badge from '../../components/shared/Badge.astro';
+import Button from '../../components/shared/Button.astro';
+import SectionHeader from '../../components/shared/SectionHeader.astro';
+
+const title = 'AI Agent Consulting Perth WA';
+const description = 'AI agent consulting in Perth WA for deployable LLM pipelines, Telegram workflows, retrieval systems, automation, and handover.';
+const canonicalUrl = 'https://placeholder.com/services/ai-consulting';
+
+const coverage = [
+  'LLM pipeline design and deployment (Gemini, AWS Bedrock, local models)',
+  'Telegram-based agent interfaces and notification systems',
+  'Tool-calling agents with real API integrations',
+  'Document ingestion, summarisation, and retrieval workflows',
+  'On-premise or cloud-hosted agent infrastructure',
+  'Agent monitoring, logging, and cost management',
+];
+
+const tools = [
+  'Hermes',
+  'OpenClaw',
+  'Atlas',
+  'Google Vertex AI / Gemini',
+  'AWS Bedrock',
+  'Vaultwarden',
+  'Caddy',
+  'Tailscale',
+  'Telegram Bot API',
+  'Docker',
+  'Python',
+];
+
+const process = [
+  'Understand your actual workflow problem',
+  'Propose the minimum viable agent architecture',
+  'Build and test in a staging environment',
+  'Hand off with documentation you can actually use',
+];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <div class="max-w-4xl">
+        <p class="font-mono text-sm font-bold uppercase text-amber">AI AGENT CONSULTING</p>
+        <h1 class="mt-3 text-5xl font-black text-text md:text-6xl">AI Agents Built for Real Work.</h1>
+        <p class="mt-6 max-w-3xl text-lg text-muted">
+          Not chatbots. Not demos. Deployable AI agent infrastructure that integrates with your existing tools, workflows, and data.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2">
+          {['--ai-agents', '--automation', '--llm', '--tool-calling'].map((flag) => <Badge label={flag} />)}
+        </div>
+        <div class="mt-9">
+          <Button href="/contact">Discuss your project</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-border bg-surface/45">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <SectionHeader
+        eyebrow="WHAT THIS COVERS"
+        heading="Agent infrastructure, not AI theatre."
+        subtext="The work is focused on getting useful systems deployed, monitored, and handed over cleanly."
+      />
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        {coverage.map((item) => (
+          <div class="rounded-lg border border-border bg-surface p-5">
+            <p class="text-sm font-medium text-text">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[1fr_0.8fr] lg:px-8">
+      <div>
+        <SectionHeader
+          eyebrow="TOOLS"
+          heading="Tools I work with."
+          subtext="No logos or vendor theatre. Just the tools that fit the job."
+        />
+        <div class="mt-8 flex flex-wrap gap-2">
+          {tools.map((tool) => <Badge label={tool} tone="accent" />)}
+        </div>
+      </div>
+
+      <aside class="rounded-lg border border-border bg-surface p-6">
+        <p class="font-mono text-sm font-bold uppercase text-amber">WHAT I DON'T DO</p>
+        <p class="mt-4 text-lg font-bold text-text">
+          I don't sell AI as a magic solution.
+        </p>
+        <p class="mt-3 text-sm text-muted">
+          If a simpler automation would serve you better, I'll say so.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-surface/45">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <SectionHeader
+        eyebrow="PROCESS"
+        heading="A clean path from workflow to handoff."
+      />
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-4">
+        {process.map((step) => (
+          <article class="relative rounded-lg border border-border bg-surface p-6">
+            <div class="mb-5 h-3 w-3 rounded-full bg-amber" aria-hidden="true"></div>
+            <h2 class="text-lg font-black text-text">{step}</h2>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-10">
+        <Button href="/contact">Discuss your project</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

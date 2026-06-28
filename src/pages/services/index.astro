@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Badge from '../../components/shared/Badge.astro';
+import Button from '../../components/shared/Button.astro';
+import SectionHeader from '../../components/shared/SectionHeader.astro';
+
+const title = 'IT Consulting Services Perth';
+const description = 'Perth IT consulting services for AI agents, Linux and cloud infrastructure, DevOps support, and field technician work for local businesses.';
+const canonicalUrl = 'https://placeholder.com/services';
+
+const services = [
+  {
+    title: 'AI Agent Consulting',
+    href: '/services/ai-consulting',
+    description:
+      'Deployable AI agent infrastructure for real workflows, from Telegram-based interfaces to tool-calling pipelines and document automation.',
+    flags: ['--ai-agents', '--automation', '--llm'],
+  },
+  {
+    title: 'Linux / Cloud / DevOps',
+    href: '/services/linux-cloud',
+    description:
+      'Linux server administration, AWS and cloud deployment, Docker stacks, VPS migration, monitoring, and practical infrastructure maintenance.',
+    flags: ['--linux', '--aws', '--docker'],
+  },
+  {
+    title: 'Field IT / Smart Hands',
+    href: '/services/field-it',
+    description:
+      'On-site technical support across Perth for hardware deployment, network equipment, rack and stack work, and smart hands engagements.',
+    flags: ['--field-tech', '--perth', '--on-site'],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <div class="max-w-4xl">
+        <p class="font-mono text-sm font-bold uppercase text-amber">SERVICES</p>
+        <h1 class="mt-3 text-5xl font-black text-text md:text-6xl">IT consulting that stays practical.</h1>
+        <p class="mt-6 max-w-3xl text-lg text-muted">
+          Independent support for businesses that need working infrastructure, not vague strategy decks.
+          Choose the closest service area below, or get in touch if your project spans more than one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-border bg-surface/45">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <SectionHeader
+        eyebrow="SERVICE AREAS"
+        heading="Three ways I can help."
+        subtext="Each service is scoped around a practical outcome: deploy the system, stabilise the platform, or get the physical work done."
+      />
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        {services.map((service) => (
+          <article class="flex h-full flex-col rounded-lg border border-border bg-surface p-6">
+            <h2 class="text-2xl font-black text-text">{service.title}</h2>
+            <p class="mt-4 text-sm text-muted">{service.description}</p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              {service.flags.map((flag) => <Badge label={flag} />)}
+            </div>
+
+            <a href={service.href} class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-text">
+              View service
+              <span aria-hidden="true">-&gt;</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-bg">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <div class="rounded-lg border border-border bg-surface px-6 py-10 md:px-10 md:py-12">
+        <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p class="font-mono text-sm font-bold uppercase text-amber">NOT SURE WHICH APPLIES?</p>
+            <h2 class="mt-3 text-3xl font-black text-text md:text-4xl">Start with the problem.</h2>
+            <p class="mt-4 max-w-2xl text-base text-muted md:text-lg">
+              Many projects cross service lines. Send a short summary of what is broken, blocked, or due to be built and I will tell you where I can help.
+            </p>
+          </div>
+          <div class="md:justify-self-end">
+            <Button href="/contact">Contact Anthony</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
