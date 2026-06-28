@@ -22,10 +22,19 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const canonicalUrl = `https://placeholder.com/case-studies/${entry.slug}`;
+const seoTitles: Record<string, string> = {
+  'ai-agent-infrastructure': 'AI Agent Workflow Case Study | Anthony Walker',
+  'aws-automation': 'AWS Automation Case Study | Anthony Walker',
+  'docker-reverse-proxy': 'Docker Caddy Migration Case Study | Anthony Walker',
+  'field-technician-support': 'Perth Field IT Case Study | Anthony Walker',
+  'linux-hardening': 'Linux Hardening Case Study | Anthony Walker',
+  'vaultwarden-migration': 'Vaultwarden VPS Case Study | Anthony Walker',
+};
+const seoTitle = seoTitles[entry.slug] ?? `${entry.data.title} | Anthony Walker`;
 ---
 
 <BaseLayout
-  title={entry.data.title}
+  title={seoTitle}
   description={entry.data.summary}
   canonicalUrl={canonicalUrl}
 >

@@ -1,0 +1,27 @@
+---
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Anthony Walker IT Consulting',
+  description:
+    'Independent IT consultant in Perth, WA. Linux, AWS, AI agent deployment, Docker, and field technician services.',
+  url: '[PLACEHOLDER: https://anthonywalker.com.au]',
+  email: 'awalker@wegrid.org',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Perth',
+    addressRegion: 'WA',
+    addressCountry: 'AU',
+  },
+  areaServed: 'Perth, Western Australia',
+  serviceType: [
+    'IT Consulting',
+    'Linux Administration',
+    'Cloud Infrastructure',
+    'AI Agent Deployment',
+    'Field IT Support',
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

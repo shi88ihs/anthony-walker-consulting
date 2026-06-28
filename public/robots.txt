@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: [PLACEHOLDER: https://anthonywalker.com.au/sitemap.xml]

@@ -3,6 +3,7 @@ import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
 import inter900 from '@fontsource/inter/files/inter-latin-900-normal.woff2?url';
 import jetbrainsMono400 from '@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2?url';
+import SchemaOrg from '../seo/SchemaOrg.astro';
 
 interface Props {
   title: string;
@@ -18,7 +19,7 @@ const {
   ogImage = '/og-image.png',
 } = Astro.props;
 
-const fullTitle = `${title} | Anthony Walker \u2014 Perth IT Consultant`;
+const fullTitle = title;
 const imageUrl = new URL(ogImage, canonicalUrl).toString();
 ---
 
@@ -44,4 +45,5 @@ const imageUrl = new URL(ogImage, canonicalUrl).toString();
 <link rel="preload" href={inter700} as="font" type="font/woff2" crossorigin="anonymous" />
 <link rel="preload" href={inter900} as="font" type="font/woff2" crossorigin="anonymous" />
 <link rel="preload" href={jetbrainsMono400} as="font" type="font/woff2" crossorigin="anonymous" />
+<SchemaOrg />
 <slot />
