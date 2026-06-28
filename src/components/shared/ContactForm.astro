@@ -1,0 +1,90 @@
+---
+const serviceTypes = [
+  'AI Consulting',
+  'Linux & Cloud',
+  'Field IT',
+  'Not sure yet',
+  'Other',
+];
+---
+
+<!-- PLACEHOLDER: configure form action for your deployment -->
+<form
+  name="contact"
+  method="POST"
+  action="/contact"
+  data-netlify="true"
+  class="rounded-lg border border-border bg-surface p-5 sm:p-6"
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div class="grid gap-5">
+    <div>
+      <label for="name" class="block text-sm font-bold text-text">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        required
+        class="mt-2 min-h-11 w-full rounded-lg border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-muted focus:border-accent"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-bold text-text">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        class="mt-2 min-h-11 w-full rounded-lg border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-muted focus:border-accent"
+      />
+    </div>
+
+    <div>
+      <label for="company" class="block text-sm font-bold text-text">Company / Organisation <span class="font-medium text-muted">(optional)</span></label>
+      <input
+        id="company"
+        name="company"
+        type="text"
+        autocomplete="organization"
+        class="mt-2 min-h-11 w-full rounded-lg border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-muted focus:border-accent"
+      />
+    </div>
+
+    <div>
+      <label for="service-type" class="block text-sm font-bold text-text">Service type</label>
+      <select
+        id="service-type"
+        name="service-type"
+        class="mt-2 min-h-11 w-full rounded-lg border border-border bg-bg px-4 py-3 text-base text-text focus:border-accent"
+      >
+        {serviceTypes.map((service) => (
+          <option value={service} selected={service === 'Not sure yet'}>{service}</option>
+        ))}
+      </select>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-bold text-text">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="7"
+        minlength="20"
+        required
+        class="mt-2 w-full rounded-lg border border-border bg-bg px-4 py-3 text-base text-text placeholder:text-muted focus:border-accent"
+      ></textarea>
+      <p class="mt-2 text-xs font-medium text-muted">Minimum 20 characters.</p>
+    </div>
+
+    <button
+      type="submit"
+      class="inline-flex min-h-11 items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-bold text-bg transition hover:bg-text hover:text-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-fit"
+    >
+      Send message
+    </button>
+  </div>
+</form>

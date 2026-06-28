@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/shared/Badge.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
+import SectionHeader from '../components/shared/SectionHeader.astro';
+
+const title = 'Contact Anthony Walker';
+const description = 'Contact Anthony Walker for Perth IT consulting across AI agents, Linux and cloud infrastructure, DevOps support, and field IT work.';
+const canonicalUrl = 'https://placeholder.com/contact';
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div>
+        <p class="font-mono text-sm font-bold uppercase text-amber">CONTACT</p>
+        <h1 class="mt-3 text-5xl font-black text-text md:text-6xl">Let's talk about your project.</h1>
+        <p class="mt-6 max-w-2xl text-lg text-muted">
+          Describe what you need and I'll respond within one business day. No obligation, no sales pitch.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2">
+          {['--ai-consulting', '--linux-cloud', '--field-it', '--perth'].map((flag) => <Badge label={flag} />)}
+        </div>
+      </div>
+
+      <ContactForm />
+    </div>
+  </section>
+
+  <section class="bg-surface/45">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <SectionHeader
+        eyebrow="ALTERNATIVE CONTACT"
+        heading="Prefer email?"
+        subtext="Use the form above or send a short summary directly."
+      />
+
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="rounded-lg border border-border bg-surface p-6">
+          <h2 class="font-mono text-sm font-bold uppercase text-amber">Email</h2>
+          <p class="mt-4 text-sm text-muted">
+            <a href="mailto:awalker@wegrid.org" class="font-bold text-accent hover:text-text">awalker@wegrid.org</a>
+          </p>
+        </article>
+
+        <article class="rounded-lg border border-border bg-surface p-6">
+          <h2 class="font-mono text-sm font-bold uppercase text-amber">Location</h2>
+          <p class="mt-4 text-sm text-muted">Perth, Western Australia</p>
+        </article>
+
+        <article class="rounded-lg border border-border bg-surface p-6">
+          <h2 class="font-mono text-sm font-bold uppercase text-amber">Response time</h2>
+          <p class="mt-4 text-sm text-muted">Usually within 1 business day</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

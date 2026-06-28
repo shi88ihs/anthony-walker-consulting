@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/shared/Badge.astro';
+import Button from '../components/shared/Button.astro';
+
+const title = 'Page Not Found';
+const description = 'This page could not be found on Anthony Walker IT Consulting. Use the navigation to return to Perth IT consulting services and case studies.';
+const canonicalUrl = 'https://placeholder.com/404';
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <section class="bg-bg">
+    <div class="mx-auto flex min-h-[62vh] max-w-content items-center px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <div class="max-w-3xl">
+        <Badge label="--error: path_not_found" />
+        <h1 class="mt-6 text-5xl font-black text-text md:text-6xl">404 &mdash; Page not found.</h1>
+        <p class="mt-6 max-w-2xl text-lg text-muted">
+          This URL doesn't exist. Try the navigation above.
+        </p>
+        <div class="mt-9">
+          <Button href="/">Back to home</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

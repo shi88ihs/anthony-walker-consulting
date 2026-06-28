@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/shared/Badge.astro';
+import Button from '../components/shared/Button.astro';
+import SectionHeader from '../components/shared/SectionHeader.astro';
+
+const title = 'About Anthony Walker';
+const description = 'About Anthony Walker, an independent IT consultant in Perth WA with experience across MSP support, Linux, cloud, field IT, and AI agents.';
+const canonicalUrl = 'https://placeholder.com/about';
+
+const bio = [
+  "I've spent 13+ years working in IT across MSP environments, independent contracting, and hands-on infrastructure roles. I've helped businesses with everything from first-line helpdesk support to deploying AI agent pipelines on cloud infrastructure.",
+  'I work independently, which means you deal directly with me \u2014 not a sales layer, not an offshore team, and not a ticketing system that makes you feel like a number.',
+  "My background covers Linux server administration, AWS and cloud deployment, Docker and container orchestration, VPS migration, automation scripting, and field technician work. More recently, I've been building and deploying AI agent infrastructure using tools like Hermes, OpenClaw, Google Vertex AI, and Telegram-based pipelines.",
+  "I'm based in Perth, Western Australia, and available for remote and on-site engagements.",
+];
+
+const technicalBackground = [
+  { area: 'Operating systems', detail: 'Ubuntu, Debian, CentOS, Windows Server' },
+  { area: 'Cloud platforms', detail: 'AWS (EC2, S3, Route53, IAM, CloudWatch)' },
+  { area: 'Containers', detail: 'Docker, Docker Compose' },
+  { area: 'Reverse proxies', detail: 'Caddy, Nginx' },
+  { area: 'Networking', detail: 'Tailscale, VPN, firewall config, DNS' },
+  { area: 'AI/ML tooling', detail: 'Vertex AI, Gemini, AWS Bedrock, local LLMs' },
+  { area: 'Scripting', detail: 'Bash, Python, PowerShell' },
+  { area: 'MSP tools', detail: 'ConnectWise, various RMM platforms' },
+  { area: 'Other', detail: 'Vaultwarden, Grafana basics, Git' },
+];
+
+const flags = ['--linux', '--aws', '--docker', '--ai-agents', '--field-tech'];
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:px-8">
+      <div class="max-w-4xl">
+        <p class="font-mono text-sm font-bold uppercase text-amber">ABOUT</p>
+        <h1 class="mt-3 text-5xl font-black text-text md:text-6xl">Anthony Walker &mdash; IT Consultant, Perth WA</h1>
+        <p class="mt-6 max-w-3xl text-lg text-muted">
+          Independent IT consulting across practical infrastructure, cloud support, field work, and AI agent deployment.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-2">
+          {flags.map((flag) => <Badge label={flag} />)}
+        </div>
+      </div>
+
+      <aside>
+        <div class="flex aspect-[4/5] min-h-80 items-center justify-center rounded-lg border border-border bg-[#5B6472] text-center">
+          <div>
+            <p class="text-lg font-black text-text">Professional photo</p>
+            <p class="mt-2 font-mono text-xs font-bold uppercase text-bg">[PLACEHOLDER]</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-b border-border bg-surface/45">
+    <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[1fr_0.42fr] lg:px-8">
+      <div>
+        <SectionHeader
+          eyebrow="BACKGROUND"
+          heading="Hands-on IT experience, direct engagement."
+        />
+        <div class="mt-8 space-y-5">
+          {bio.map((paragraph) => (
+            <p class="max-w-3xl text-base text-muted md:text-lg">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      <aside class="h-fit rounded-lg border border-border bg-surface p-6">
+        <p class="font-mono text-sm font-bold uppercase text-amber">WORKING STYLE</p>
+        <p class="mt-4 text-2xl font-black text-text">Direct communication. Honest scoping. No vague retainers.</p>
+        <p class="mt-4 text-sm text-muted">I'll tell you upfront what's achievable and what isn't.</p>
+        <div class="mt-7">
+          <Button href="/contact">Start a conversation</Button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-b border-border bg-bg">
+    <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+      <SectionHeader
+        eyebrow="TECHNICAL BACKGROUND"
+        heading="Systems and tools I work with."
+        subtext="An honest snapshot of the infrastructure, support, and automation areas I have worked across."
+      />
+
+      <div class="mt-10 overflow-hidden rounded-lg border border-border bg-surface">
+        <dl class="divide-y divide-border">
+          {technicalBackground.map((item) => (
+            <div class="grid gap-2 px-5 py-5 md:grid-cols-[14rem_1fr] md:gap-6">
+              <dt class="font-mono text-xs font-bold uppercase text-amber">{item.area}</dt>
+              <dd class="text-sm text-muted">{item.detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface/45">
+    <div class="mx-auto grid max-w-content gap-8 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+      <div>
+        <p class="font-mono text-sm font-bold uppercase text-amber">LINKS</p>
+        <h2 class="mt-3 text-3xl font-black text-text md:text-4xl">Find the public technical footprint.</h2>
+        <div class="mt-5 space-y-3 text-sm text-muted">
+          <p>
+            GitHub:
+            <a href="https://github.com/shi88ihs" class="font-bold text-accent hover:text-text" rel="noopener noreferrer">github.com/shi88ihs</a>
+          </p>
+          <p>[PLACEHOLDER: Add LinkedIn URL when ready]</p>
+        </div>
+      </div>
+      <div class="lg:justify-self-end">
+        <Button href="/contact">Contact Anthony</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
