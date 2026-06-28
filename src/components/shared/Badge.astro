@@ -1,0 +1,28 @@
+---
+interface Props {
+  label: string;
+  tone?: 'amber' | 'accent' | 'success';
+  class?: string;
+}
+
+const {
+  label,
+  tone = 'amber',
+  class: className = '',
+} = Astro.props;
+
+const toneClasses = {
+  amber: 'text-amber',
+  accent: 'text-accent',
+  success: 'text-success',
+};
+---
+
+<span class:list={[
+  'inline-flex items-center gap-1 rounded-lg border border-border bg-bg/70 px-3 py-1.5 font-mono text-xs font-medium',
+  toneClasses[tone],
+  className,
+]}>
+  <span class="text-muted">#</span>
+  <span>{label}</span>
+</span>

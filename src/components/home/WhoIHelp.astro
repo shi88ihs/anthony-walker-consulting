@@ -1,0 +1,40 @@
+---
+import SectionHeader from '../shared/SectionHeader.astro';
+
+const audiences = [
+  {
+    title: 'Small & Medium Businesses',
+    description: 'You need IT that works without a full-time IT team.',
+  },
+  {
+    title: 'Startups & Technical Founders',
+    description: 'You need infrastructure done right the first time.',
+  },
+  {
+    title: 'Enterprises Needing Overflow Support',
+    description: 'Specialist contract work alongside your existing team.',
+  },
+  {
+    title: 'Perth Businesses Needing On-Site Support',
+    description: 'Field deployment, smart hands, and practical on-site technical support.',
+  },
+];
+---
+
+<section class="border-b border-border bg-bg">
+  <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+    <SectionHeader
+      eyebrow="WHO I WORK WITH"
+      heading="Built for businesses that need results, not reports."
+    />
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {audiences.map((audience) => (
+        <article class="rounded-lg border border-border bg-surface p-6">
+          <h3 class="text-xl font-black text-text">{audience.title}</h3>
+          <p class="mt-3 text-sm text-muted">{audience.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

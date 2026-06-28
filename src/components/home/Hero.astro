@@ -1,0 +1,57 @@
+---
+import Badge from '../shared/Badge.astro';
+import Button from '../shared/Button.astro';
+
+const flags = [
+  '--linux',
+  '--aws',
+  '--docker',
+  '--ai-agents',
+  '--field-tech',
+  '--automation',
+];
+---
+
+<section class="hero-grid relative overflow-hidden border-b border-border">
+  <div class="relative z-10 mx-auto max-w-content px-4 py-16 sm:px-6 md:py-20 lg:px-8 lg:py-24">
+    <div class="max-w-4xl">
+      <h1 class="text-5xl font-black text-text md:text-6xl">
+        IT Infrastructure That
+        <span class="block">Actually Works.</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-muted">
+        Independent IT consultant based in Perth, WA. I help businesses deploy, migrate, harden, and automate their infrastructure &mdash; from Linux servers to AI agent pipelines.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-2" aria-label="Core service flags">
+        {flags.map((flag) => <Badge label={flag} />)}
+      </div>
+
+      <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+        <Button href="/services">View Services</Button>
+        <Button href="/contact" variant="outline">Get in Touch</Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-grid::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image:
+      linear-gradient(rgba(30, 45, 69, 0.72) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 45, 69, 0.72) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.86), transparent 86%);
+    opacity: 0.5;
+  }
+
+  .hero-grid::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: linear-gradient(180deg, rgba(8, 14, 26, 0.15), #080e1a 94%);
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+import Badge from '../shared/Badge.astro';
+import SectionHeader from '../shared/SectionHeader.astro';
+
+const services = [
+  {
+    icon: 'AI',
+    title: 'AI Agent Consulting',
+    description: 'Design and deploy AI agent infrastructure for real business use. From Telegram-based workflows to cloud-hosted LLM pipelines.',
+    flags: ['--ai-agents', '--automation', '--llm'],
+    href: '/services/ai-consulting',
+  },
+  {
+    icon: 'LX',
+    title: 'Linux Server Administration',
+    description: 'Setup, hardening, monitoring, and maintenance of Linux servers. Ubuntu, Debian, CentOS - bare metal or VPS.',
+    flags: ['--linux', '--bash', '--security'],
+    href: '/services/linux-cloud',
+  },
+  {
+    icon: 'AW',
+    title: 'AWS & Cloud Deployment',
+    description: 'Infrastructure provisioning, cost optimisation, and cloud migration for small and mid-sized businesses.',
+    flags: ['--aws', '--cloud', '--terraform'],
+    href: '/services/linux-cloud',
+  },
+  {
+    icon: 'VP',
+    title: 'VPS Migration & Hosting',
+    description: 'Move services between hosts cleanly. Docker, Caddy, Tailscale, and reverse proxy configuration.',
+    flags: ['--docker', '--vps', '--caddy'],
+    href: '/services/linux-cloud',
+  },
+  {
+    icon: 'SH',
+    title: 'Automation & Scripting',
+    description: 'Reduce repetitive ops work with shell scripts, cron jobs, API integrations, and workflow automation.',
+    flags: ['--bash', '--python', '--automation'],
+    href: '/services/ai-consulting',
+  },
+  {
+    icon: 'FT',
+    title: 'Field IT / Smart Hands',
+    description: 'On-site support, hardware deployment, rack and stack, cable management, and physical infrastructure work.',
+    flags: ['--field-tech', '--perth', '--on-site'],
+    href: '/services/field-it',
+  },
+];
+---
+
+<section class="border-b border-border bg-surface/45">
+  <div class="mx-auto max-w-content px-4 py-12 sm:px-6 md:py-20 lg:px-8">
+    <SectionHeader
+      eyebrow="SERVICES"
+      heading="What I do."
+    />
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => (
+        <article class="flex h-full flex-col rounded-lg border border-border bg-surface p-6">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-bg font-mono text-sm font-bold text-accent" aria-hidden="true">
+            {service.icon}
+          </div>
+          <h3 class="mt-5 text-xl font-black text-text">{service.title}</h3>
+          <p class="mt-3 text-sm text-muted">{service.description}</p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {service.flags.map((flag) => <Badge label={flag} />)}
+          </div>
+
+          <a href={service.href} class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-text">
+            Learn more
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

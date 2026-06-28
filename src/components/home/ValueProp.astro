@@ -1,0 +1,37 @@
+---
+import SectionHeader from '../shared/SectionHeader.astro';
+
+const stats = [
+  {
+    value: '13+',
+    label: 'Years of Experience',
+  },
+  {
+    value: 'Full-stack',
+    label: 'Linux to AI Coverage',
+  },
+  {
+    value: 'Perth-based',
+    label: 'Available for Remote & On-site',
+  },
+];
+---
+
+<section class="border-b border-border bg-bg">
+  <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:px-8">
+    <SectionHeader
+      eyebrow="WHAT I BRING"
+      heading="Practical experience, not theory."
+      subtext="With 13+ years across MSP environments, independent contracting, field deployment, and cloud infrastructure, I've seen what breaks and why. I work directly - no account managers, no offshore handoffs, no vague deliverables."
+    />
+
+    <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+      {stats.map((stat) => (
+        <div class="rounded-lg border border-border bg-surface p-5">
+          <p class="text-2xl font-black text-text">{stat.value}</p>
+          <p class="mt-2 text-sm font-medium text-muted">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
