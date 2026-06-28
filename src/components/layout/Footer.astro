@@ -1,0 +1,51 @@
+---
+const quickLinks = [
+  { href: '/services', label: 'Services' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="border-t border-border bg-surface">
+  <div class="mx-auto grid max-w-content gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
+    <div>
+      <a href="/" class="inline-flex items-center gap-2 text-base font-bold text-text">
+        <span class="font-mono text-amber">&gt;_</span>
+        <span>Anthony Walker</span>
+      </a>
+      <p class="mt-4 max-w-sm text-sm text-muted">
+        Independent IT consultant in Perth, WA, focused on Linux, cloud infrastructure, AI agent deployment, and field IT support.
+      </p>
+      <p class="mt-3 text-xs font-medium text-muted">[PLACEHOLDER: ABN XX XXX XXX XXX]</p>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-bold uppercase tracking-normal text-text">Quick links</h2>
+      <ul class="mt-4 space-y-3">
+        {quickLinks.map((link) => (
+          <li>
+            <a href={link.href} class="text-sm font-medium text-muted hover:text-accent">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-bold uppercase tracking-normal text-text">Contact</h2>
+      <ul class="mt-4 space-y-3 text-sm text-muted">
+        <li><a href="mailto:awalker@wegrid.org" class="hover:text-accent">awalker@wegrid.org</a></li>
+        <li>Perth, Western Australia</li>
+        <li>[PLACEHOLDER: Add LinkedIn URL when ready]</li>
+        <li><a href="https://github.com/shi88ihs" class="hover:text-accent" rel="noopener noreferrer">github.com/shi88ihs</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-border px-4 py-5">
+    <div class="mx-auto flex max-w-content flex-col gap-2 text-xs font-medium text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; 2025 Anthony Walker. All rights reserved.</p>
+      <p>Perth, Western Australia</p>
+    </div>
+  </div>
+</footer>

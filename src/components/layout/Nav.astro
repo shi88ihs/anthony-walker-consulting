@@ -1,0 +1,92 @@
+---
+const serviceLinks = [
+  { href: '/services/ai-consulting', label: 'AI Consulting' },
+  { href: '/services/linux-cloud', label: 'Linux & Cloud' },
+  { href: '/services/field-it', label: 'Field IT' },
+];
+
+const navLinks = [
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav class="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-sm" aria-label="Primary navigation">
+  <div class="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="inline-flex items-center gap-2 text-sm font-bold tracking-normal text-text sm:text-base">
+      <span class="font-mono text-amber">&gt;_</span>
+      <span>Anthony Walker</span>
+    </a>
+
+    <div class="hidden items-center gap-7 md:flex">
+      <details class="nav-services group relative">
+        <summary class="flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-muted transition hover:text-accent">
+          Services
+          <span class="text-xs text-muted transition group-open:rotate-180" aria-hidden="true">v</span>
+        </summary>
+        <div class="absolute right-0 mt-3 w-56 rounded-lg border border-border bg-surface p-2 shadow-sm">
+          <a href="/services" class="block rounded-md px-3 py-2 text-sm font-medium text-text hover:bg-bg hover:text-accent">Services Overview</a>
+          {serviceLinks.map((link) => (
+            <a href={link.href} class="block rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-bg hover:text-accent">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </details>
+
+      {navLinks.map((link) => (
+        <a href={link.href} class="text-sm font-medium text-muted transition hover:text-accent">
+          {link.label}
+        </a>
+      ))}
+
+      <a href="/contact" class="rounded-lg bg-accent px-4 py-2 text-sm font-bold text-bg transition hover:bg-text hover:text-bg">
+        Get in Touch
+      </a>
+    </div>
+
+    <details class="mobile-menu group md:hidden">
+      <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-border bg-surface text-text" aria-label="Open navigation menu">
+        <span class="flex flex-col gap-1.5" aria-hidden="true">
+          <span class="h-0.5 w-5 bg-text"></span>
+          <span class="h-0.5 w-5 bg-text"></span>
+          <span class="h-0.5 w-5 bg-text"></span>
+        </span>
+      </summary>
+      <div class="absolute left-0 right-0 top-[73px] border-b border-border bg-bg px-4 py-5 shadow-sm">
+        <div class="mx-auto flex max-w-content flex-col gap-2">
+          <details class="rounded-lg border border-border bg-surface p-3">
+            <summary class="cursor-pointer list-none text-sm font-bold text-text">Services</summary>
+            <div class="mt-3 flex flex-col gap-2">
+              <a href="/services" class="text-sm font-medium text-muted hover:text-accent">Services Overview</a>
+              {serviceLinks.map((link) => (
+                <a href={link.href} class="text-sm font-medium text-muted hover:text-accent">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </details>
+
+          {navLinks.map((link) => (
+            <a href={link.href} class="rounded-lg border border-border bg-surface px-3 py-3 text-sm font-bold text-text hover:text-accent">
+              {link.label}
+            </a>
+          ))}
+
+          <a href="/contact" class="rounded-lg bg-accent px-4 py-3 text-center text-sm font-bold text-bg hover:bg-text hover:text-bg">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </details>
+  </div>
+</nav>
+
+<style>
+  .nav-services summary::-webkit-details-marker,
+  .mobile-menu summary::-webkit-details-marker,
+  .mobile-menu details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
