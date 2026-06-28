@@ -2,7 +2,8 @@
 import inter400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import inter700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
 import inter900 from '@fontsource/inter/files/inter-latin-900-normal.woff2?url';
-import jetbrainsMono400 from '@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2?url';
+import jetbrainsMono500 from '@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2?url';
+import jetbrainsMono700 from '@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2?url';
 import SchemaOrg from '../seo/SchemaOrg.astro';
 
 interface Props {
@@ -44,6 +45,7 @@ const imageUrl = new URL(ogImage, canonicalUrl).toString();
 <link rel="preload" href={inter400} as="font" type="font/woff2" crossorigin="anonymous" />
 <link rel="preload" href={inter700} as="font" type="font/woff2" crossorigin="anonymous" />
 <link rel="preload" href={inter900} as="font" type="font/woff2" crossorigin="anonymous" />
-<link rel="preload" href={jetbrainsMono400} as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href={jetbrainsMono500} as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href={jetbrainsMono700} as="font" type="font/woff2" crossorigin="anonymous" />
 <SchemaOrg />
 <slot />
