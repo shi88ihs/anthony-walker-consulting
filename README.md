@@ -1,6 +1,6 @@
 # Consulting Website
 
-Static Astro website for Anthony Walker IT Consulting, an independent Perth IT consulting site covering AI consulting, Linux and cloud infrastructure, field IT support, contact capture, and anonymised case studies.
+Static Astro website for a consulting business, an independent Perth IT consulting site covering AI consulting, Linux and cloud infrastructure, field IT support, contact capture, and anonymised case studies.
 
 The site builds to static files in `dist` and uses Astro content collections for case studies.
 

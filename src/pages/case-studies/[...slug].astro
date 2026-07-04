@@ -23,14 +23,14 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const canonicalUrl = `https://placeholder.com/case-studies/${entry.slug}`;
 const seoTitles: Record<string, string> = {
-  'ai-agent-infrastructure': 'AI Agent Workflow Case Study | Anthony Walker',
-  'aws-automation': 'AWS Automation Case Study | Anthony Walker',
-  'docker-reverse-proxy': 'Docker Caddy Migration Case Study | Anthony Walker',
-  'field-technician-support': 'Perth Field IT Case Study | Anthony Walker',
-  'linux-hardening': 'Linux Hardening Case Study | Anthony Walker',
-  'vaultwarden-migration': 'Vaultwarden VPS Case Study | Anthony Walker',
+  'ai-agent-infrastructure': 'AI Agent Workflow Case Study | Consulting Website',
+  'aws-automation': 'AWS Automation Case Study | Consulting Website',
+  'docker-reverse-proxy': 'Docker Caddy Migration Case Study | Consulting Website',
+  'field-technician-support': 'Perth Field IT Case Study | Consulting Website',
+  'linux-hardening': 'Linux Hardening Case Study | Consulting Website',
+  'vaultwarden-migration': 'Vaultwarden VPS Case Study | Consulting Website',
 };
-const seoTitle = seoTitles[entry.slug] ?? `${entry.data.title} | Anthony Walker`;
+const seoTitle = seoTitles[entry.slug] ?? `${entry.data.title} | Consulting Website`;
 ---
 
 <BaseLayout
