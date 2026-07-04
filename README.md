@@ -1,4 +1,4 @@
-# Anthony Walker Consulting
+# Consulting Website
 
 Static Astro website for Anthony Walker IT Consulting, an independent Perth IT consulting site covering AI consulting, Linux and cloud infrastructure, field IT support, contact capture, and anonymised case studies.
 
